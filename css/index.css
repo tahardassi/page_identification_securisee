@@ -21,7 +21,9 @@ body {
     flex-direction: column;
     padding: 5vh;
 }
-  
+.form-group span{
+    color: red;
+} 
 
 .signin-button, .signup-button {
     background-color: blue;

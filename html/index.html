@@ -2,26 +2,32 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script src="../js/validation.js"></script>
     <title>Formulaire d'identification</title>
   </head>
   <body>
 
-    <form class="form-container" action="signin_form.php" method="post">
+    <form class="form-container"   onsubmit="return validateForm()" action="" method="post">
       <div class="form-group">
         <label for="username">Nom d'utilisateur :</label>
         <div>
           <input type="text" id="username" name="username">
           <button type="button" onclick="document.getElementById('username').value=''">&times;</button>
+          <br><br>
+          <span id="username-error"></span>
         </div>
       </div>
 
-      <br><br>
+
       
       <div class="form-group">
         <label for="password">Mot de passe :</label>
         <div>
           <input type="password" id="password" name="password">
+
           <button type="button" onclick="document.getElementById('password').value=''">&times;</button>
+          <br><br>
+          <span id="password-error"></span>
         </div>
       </div>
 
