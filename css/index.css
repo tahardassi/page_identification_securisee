@@ -1,7 +1,7 @@
 
- body {
+body {
     font-family: 'Roboto';
-    }
+}
 
 .form-container {
     text-align: center;
@@ -9,15 +9,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     height: 600px;
     max-width: 460px;
     margin: 0 auto;
-    
     background: #F5F5F5;
-    padding: 12px;
-  }
-  .submit-button, .signup-button {
+}
+
+.form-group{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+}
+  
+
+.signin-button, .signup-button {
     background-color: blue;
     color: white;
     padding: 10px 20px;
@@ -25,13 +31,14 @@
     border: none;
     font-size: 16px;
     cursor: pointer;
-  }
+}
   
-  .submit-button:hover, .signup-button:hover {
+.signin-button:hover, .signup-button:hover {
     background-color: darkblue;
-  }
-  p span {
+}
+
+p span {
 
     padding: 0 10px;
-  }
+}
   

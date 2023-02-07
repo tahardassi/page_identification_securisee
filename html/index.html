@@ -5,20 +5,34 @@
     <title>Formulaire d'identification</title>
   </head>
   <body>
-    <div class="container">
-      <form class="form-container" action="">
+
+    <form class="form-container" action="signin_form.php" method="post">
+      <div class="form-group">
         <label for="username">Nom d'utilisateur :</label>
-        <input type="text" id="username" name="username">
-        <br><br>
+        <div>
+          <input type="text" id="username" name="username">
+          <button type="button" onclick="document.getElementById('username').value=''">&times;</button>
+        </div>
+      </div>
+
+      <br><br>
+      
+      <div class="form-group">
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password">
-        <br><br>
-        <input type="submit" value="Soumettre" class="submit-button">
-        <p style="text-align: center; margin: 10px 0;">
-          <span>ou</span>
-        </p>
-        <input type="button" value="S'inscrire" class="signup-button">
-      </form>
-    </div>
+        <div>
+          <input type="password" id="password" name="password">
+          <button type="button" onclick="document.getElementById('password').value=''">&times;</button>
+        </div>
+      </div>
+
+      <input type="submit" value="Soumettre" class="signin-button">
+
+      <p style="text-align: center; margin: 10px 0;">
+        <span>ou</span>
+      </p>
+
+      <input type="button" value="S'inscrire" class="signup-button">
+    </form>
+
   </body>
 </html>
