@@ -2,10 +2,7 @@
  body {
     font-family: 'Roboto';
     }
-input{
 
-    width: min-content;
-    }
 .form-container {
     text-align: center;
     display: flex;
@@ -20,7 +17,21 @@ input{
     background: #F5F5F5;
     padding: 12px;
   }
-  .submit-button {
-    background-color: rgb(53, 101, 183);
+  .submit-button, .signup-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover, .signup-button:hover {
+    background-color: darkblue;
+  }
+  p span {
+
+    padding: 0 10px;
   }
   
