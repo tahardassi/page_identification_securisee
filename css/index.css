@@ -1,0 +1,22 @@
+
+ body {
+    font-family: 'Roboto';
+    }
+.form-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 600px;
+    max-width: 460px;
+    margin: 0 auto;
+    
+    background: #F5F5F5;
+    padding: 12px;
+  }
+  input{
+
+    width: min-content;
+  }
