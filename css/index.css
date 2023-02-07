@@ -2,6 +2,10 @@
  body {
     font-family: 'Roboto';
     }
+input{
+
+    width: min-content;
+    }
 .form-container {
     text-align: center;
     display: flex;
@@ -16,7 +20,7 @@
     background: #F5F5F5;
     padding: 12px;
   }
-  input{
-
-    width: min-content;
+  .submit-button {
+    background-color: rgb(53, 101, 183);
   }
+  
