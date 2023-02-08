@@ -7,22 +7,34 @@
         // Récupération des données du formulaire
         $username = $_POST["username"];
         $password = $_POST["password"];
+
+        $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
+        // Vérification de la connexion
+        if (!$conn) {
+            die("Connexion échouée : " . mysqli_connect_error());
+        }
+
+        $sql = "SELECT * FROM users WHERE user = '$username'";
+        $exist_user = mysqli_query($conn, $sql);
+        
+
         if ($_POST['submit_button'] == "SignIn") {
             // handle form submission for soumettre
+            if($exist_user){
+                // Hachage du mot de passe avec bcrypt
+                $options = ['cost' => 12];
+                $password = password_hash($password, PASSWORD_BCRYPT, $options);
+                $sql = "SELECT * FROM users WHERE user='$username' AND password='$password'";
+                $right_password = mysqli_query($conn, $sql);
+                if($right_password){
+                    echo "<p>Bonjour ".$username. "!</p>";
+                }
+            }
 
         } elseif ($_POST['submit_button'] == "SignUp"){
             // handle form submission for s'inscrire
 
-            $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
-            // Vérification de la connexion
-            if (!$conn) {
-                die("Connexion échouée : " . mysqli_connect_error());
-            }
-
-            $sql = "SELECT * FROM users WHERE user = '$username'";
-            $result = mysqli_query($conn, $sql);
-
-            if (mysqli_num_rows($result) > 0) {
+            if (mysqli_num_rows($exist_user)) {
                 // user already exists
                 echo "Error: User already exists.";
             } else {
