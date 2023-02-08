@@ -7,7 +7,7 @@
   </head>
   <body>
 
-    <form class="form-container"   onsubmit="return validateForm()" action="" method="post">
+    <form class="form-container"   onsubmit="return validateForm()" action="../php/form-handler.php" method="post">
       <div class="form-group">
         <label for="username">Nom d'utilisateur :</label>
         <div>
@@ -31,13 +31,13 @@
         </div>
       </div>
 
-      <input type="submit" value="Soumettre" class="signin-button">
+      <input type="submit" name="submit_button" value="SignIn" class="signin-button">
 
       <p style="text-align: center; margin: 10px 0;">
         <span>ou</span>
       </p>
 
-      <input type="button" value="S'inscrire" class="signup-button">
+      <input type="submit" name="submit_button" value="SignUp" class="signup-button">
     </form>
 
   </body>
