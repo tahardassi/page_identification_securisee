@@ -72,7 +72,7 @@
             
             
         }
-        echo "<a href=\"../html/index.html\">Cliquez ici pour retourner au formulaire</a>";
+        echo "<a href=\"../index.php\">Cliquez ici pour retourner au formulaire</a>";
         // Fermeture de la connexion
         mysqli_close($conn);
     }

@@ -1,5 +1,3 @@
-
-
 function validateForm() {
     // Récupération des valeurs des champs de formulaire
     var username = document.getElementById('username').value;

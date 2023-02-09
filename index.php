@@ -7,7 +7,7 @@
   </head>
   <body>
      
-    <form class="form-container"   onsubmit="return validateForm()" action="../php/form-handler.php" method="post">
+    <form class="form-container"   onsubmit="return validateForm()" action="./php/form-handler.php" method="post">
       <div class="form-group">
         <label for="username">Nom d'utilisateur :</label>
         <div>
