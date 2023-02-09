@@ -2,19 +2,20 @@
     class Session {
         private $username;
         private $passwoerd;
+        private $conn;
 
-        public function __construct($username, $passwoerd){
+
+        public function __construct($username, $passwoerd, $connection){
             $this->username = $username;
             $this->password = $passwoerd;
+            $this->connection = $connection;
         }
         
-        public function etablish_conn($servername, $dbusername, $dbpassword, $dbname){
-            $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
-            // Vérification de la connexion
-            if (!$conn) {
-                die("Connexion échouée : " . mysqli_connect_error());
-            }
-            return $conn;
+
+        public function exist_user(){
+            $sql = "SELECT * FROM users WHERE user = '$this->username'";
+            $exist_user = mysqli_query($this->connection, $sql);
+            return mysqli_num_rows($exist_user)? TRUE : FALSE;
         }
     }
 ?>
