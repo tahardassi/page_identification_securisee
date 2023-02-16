@@ -1,8 +1,6 @@
 <?php
-    $servername = "localhost";
-    $dbusername = "root";
-    $dbpassword = "root";
-    $dbname = "usersdb";
+    // Inclure le fichier de configuration contenant les identifiants de connexion
+    require_once '../config.php';
     if (isset($_POST['submit_button'])) {
         // Récupération des données du formulaire
         $username = $_POST["username"];
@@ -11,7 +9,7 @@
         $hash =  password_hash($password, PASSWORD_BCRYPT);
 
 
-        $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
+        $conn = mysqli_connect(SERVERNAME, DBUSERNAME, DBPASSWORD, DBNAME);
         // Vérification de la connexion
         if (!$conn) {
             die("Connexion échouée : " . mysqli_connect_error());
@@ -30,7 +28,7 @@
 
             if(mysqli_num_rows($exist_user) == 1){
 
-                $pdo = new PDO("mysql:host=".$servername.";dbname=".$dbname, $dbusername, $dbpassword );
+                $pdo = new PDO("mysql:host=".SERVERNAME.";dbname=".DBNAME, DBUSERNAME, DBPASSWORD );
                 $stmt = $pdo->prepare("SELECT password FROM users WHERE user = :username");
                 $stmt->bindParam(':username', $escaped_username);
                 $stmt->execute();
@@ -75,8 +73,7 @@
                 }
 
             }
-            
-            
+        
         }
         echo "<a href=\"../index.php\">Cliquez ici pour retourner au formulaire</a>";
         // Fermeture de la connexion
