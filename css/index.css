@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: auto;
     max-width: 460px;
     margin: 0 auto;
     background: #F5F5F5;
@@ -33,6 +33,7 @@ body {
     border: none;
     font-size: 16px;
     cursor: pointer;
+    margin: 10px;
 }
   
 .signin-button:hover, .signup-button:hover {
@@ -43,4 +44,3 @@ p span {
 
     padding: 0 10px;
 }
-  

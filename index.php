@@ -6,9 +6,11 @@
     <title>Formulaire d'identification</title>
   </head>
   <body>
-     
+  
     <form class="form-container"   onsubmit="return validateForm()" action="./php/form-handler.php" method="post">
+    <img src="./images/logo.png" width = "80px" alt="logo">
       <div class="form-group">
+
         <label for="username">Nom d'utilisateur :</label>
         <div>
           <input type="text" id="username" name="username">
