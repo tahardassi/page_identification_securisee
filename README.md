@@ -7,7 +7,7 @@
     - sql
 ## Lancer l'application
     - Lancer un serveur pour le php, type Apache
-    - Lancer un serveur Mydql
+    - Lancer un serveur Msdql
     - En local j'utilse MAMP
         - serveur : "localhost"
         - username : "root"
