@@ -10,13 +10,18 @@
 
         $hash =  password_hash($password, PASSWORD_BCRYPT);
 
+
         $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
         // Vérification de la connexion
         if (!$conn) {
             die("Connexion échouée : " . mysqli_connect_error());
         }
 
-        $sql = "SELECT * FROM users WHERE user = '$username'";
+
+        // Escape the username before using it in an SQL query
+        $escaped_username = mysqli_real_escape_string($conn, $username); 
+
+        $sql = "SELECT * FROM users WHERE user = '$escaped_username'";
         $exist_user = mysqli_query($conn, $sql);
         
 
@@ -27,12 +32,13 @@
 
                 $pdo = new PDO("mysql:host=".$servername.";dbname=".$dbname, $dbusername, $dbpassword );
                 $stmt = $pdo->prepare("SELECT password FROM users WHERE user = :username");
-                $stmt->bindParam(':username', $username);
+                $stmt->bindParam(':username', $escaped_username);
                 $stmt->execute();
                 $hash = $stmt->fetchColumn();
                
                 if(password_verify($password, $hash)){
                     echo "<p>Bonjour ".$username. "!</p>";
+                    echo "<p>Bonjour ".$escaped_username. "!</p>";
 
                 }
                 else{
@@ -58,7 +64,7 @@
 
                 // Préparation de la requête SQL d'insertion
                 $sql = "INSERT INTO users (user, password)
-                VALUES ('$username', '$hash')";
+                VALUES ('$escaped_username', '$hash')";
 
                 // Exécution de la requête SQL
                 if (mysqli_query($conn, $sql)) {
