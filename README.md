@@ -4,4 +4,4 @@ En local j'utilse MAMP
     serveur : "localhost"
     username : "root"
     password : "root"
-la base de donnée est fournie dans le repertoire database
+La base de donnée est fournie dans le repertoire database
