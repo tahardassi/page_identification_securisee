@@ -13,3 +13,6 @@
         - username : "root"
         - password : "root"
     - La base de donnée est fournie dans le repertoire database
+## Modifications apportées depuis la première correction
+    -A1 Cacher le contenu des dossiers
+    -A3 Utilisation de la fonction mysqli_real_escape_string()
